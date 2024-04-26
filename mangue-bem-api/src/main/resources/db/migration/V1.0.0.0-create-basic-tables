@@ -1,0 +1,24 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    encryptedPassword VARCHAR(255) NOT NULL,
+    role ENUM('ADMIN', 'USER') NOT NULL
+);
+
+CREATE TABLE species (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    popular_name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    approval_status ENUM('PENDING', 'APPROVED', 'REJECTED') NOT NULL,
+    approved_by_id INT,
+    FOREIGN KEY (approved_by_id) REFERENCES users(id)
+);
+
+CREATE TABLE observations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    specie_id INT NOT NULL,
+    city_ibge_id VARCHAR(255) NOT NULL,
+    state_ibge_id VARCHAR(255) NOT NULL,
+    FOREIGN KEY (specie_id) REFERENCES species(id)
+);

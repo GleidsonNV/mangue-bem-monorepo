@@ -19,4 +19,5 @@ public class Specie extends RevisableEntity {
     @Column(nullable = false)
     private String description;
 
+
 }

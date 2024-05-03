@@ -24,7 +24,8 @@ public class SecurityConfiguration {
 
     public static final String[] PUBLIC_ENDPOINTS = {
             "/v1/auth/login",
-            "/v1/auth/register"
+            "/v1/auth/register",
+            "/v1/specie/{id}"
     };
 
     public static final String[] ADMIN_ENDPOINTS = {

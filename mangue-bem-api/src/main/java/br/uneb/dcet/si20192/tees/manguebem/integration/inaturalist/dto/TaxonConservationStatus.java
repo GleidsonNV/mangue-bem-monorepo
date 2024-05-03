@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class TaxonConservationStatus {
+public class 0TaxonConservationStatus {
     @JsonProperty("source_id")
     private Integer sourceId;
 
